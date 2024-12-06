@@ -52,6 +52,7 @@ const Signin = async () => {
                 id='email'
                 name='email'
                 type='email'
+                value='example@mail.com'
                 placeholder='example@mail.com'
               />
             </div>
