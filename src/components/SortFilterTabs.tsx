@@ -15,8 +15,6 @@ const SortFilterTabs = ({ filters }: TFiltersProps) => {
   const router = useRouter()
   const defaultFilter = filters.filters.find((filter) => filter.default)
 
-  console.log(currentFilters)
-
   function changeFilter(filter: string) {
     const newSearchParams = new URLSearchParams(searchParams)
     newSearchParams.set(filters.queryKey, filter)

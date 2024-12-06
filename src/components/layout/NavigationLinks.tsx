@@ -13,6 +13,7 @@ import {
   Toolbox,
   Truck,
 } from '@phosphor-icons/react/dist/ssr'
+import { Fragment } from 'react'
 
 interface INav {
   [key: string]: {
@@ -84,10 +85,10 @@ const nav: INav = {
 }
 
 const NavigationLinks = () => {
-  return Object.keys(nav).map((category) => {
+  return Object.keys(nav).map((category, index) => {
     return (
-      <>
-        <div key={category} className='space-y-[10px]'>
+      <Fragment key={category}>
+        <div className='space-y-[10px]'>
           <h2 className='px-1 font-medium text-muted-foreground text-sm capitalize'>
             {category}
           </h2>
@@ -103,7 +104,7 @@ const NavigationLinks = () => {
           </ul>
         </div>
         <NavigationSeperator />
-      </>
+      </Fragment>
     )
   })
 }
