@@ -16,6 +16,7 @@ import Logo from '@/components/Logo'
 import LogoIcon from '@/components/LogoIcon'
 import { login } from '@/actions/auth'
 import TestToaster from '@/components/TestToaster'
+import { Suspense } from 'react'
 
 const images = [
   {
@@ -27,7 +28,9 @@ const images = [
 const Signin = async () => {
   return (
     <>
-      <TestToaster />
+      <Suspense>
+        <TestToaster />
+      </Suspense>
       <main className='flex flex-col justify-center items-center bg-background sm:bg-secondary sm:px-10 w-screen h-screen'>
         <div className='flex justify-center sm:justify-start sm:px-5 lg:px-0 sm:pb-8 lg:pb-5 w-full sm:w-[420px] lg:w-full max-w-[1200px]'>
           <span className='sm:block hidden drop-shadow-md'>
