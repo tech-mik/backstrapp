@@ -5,16 +5,12 @@ import { useRef, useEffect } from 'react'
 import { toast } from 'sonner'
 
 const TestToaster = () => {
-  const searchParams = useSearchParams()
-  const testingParam = searchParams.get('testing')
-
   const mountedRef = useRef<boolean | null>(null)
 
   useEffect(() => {
-    if (!testingParam) return
     let timerId: number | string
 
-    if (!mountedRef.current && testingParam === 'true') {
+    if (!mountedRef.current) {
       setTimeout(() => {
         toast('Welcome tester!', {
           description:
@@ -29,7 +25,7 @@ const TestToaster = () => {
     return () => {
       clearTimeout(timerId)
     }
-  }, [testingParam])
+  }, [])
 
   return null
 }
